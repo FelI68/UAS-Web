@@ -17,16 +17,15 @@ function closeMenu(){
 menuToggle.addEventListener('click', toggleMenu);
 overlay.addEventListener('click', closeMenu);
 
-// Data di bawah ini telah dimodifikasi agar tampilannya mirip framework Bootstrap (Cards, Badges, Grid, Progress Bar)
-// dengan memanfaatkan struktur Flexbox dan CSS Variables bawaan dari reviewlab.css Anda.
+
 const contentData = {
     about: {
-        title: "", // Dikosongkan agar header langsung diganti oleh desain profil sentral
+        title: "", 
         subtitle: "",
         body: `
             <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 2rem;">
                 <img src="https://i.pravatar.cc/200?img=12" alt="Foto Profil" style="border-radius: 50%; width: 140px; height: 140px; object-fit: cover; border: 4px solid var(--bg-main); box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 1rem;">
-                <h2 style="color: var(--text-main); font-size: 1.75rem; margin-bottom: 0.25rem;">Alex</h2>
+                <h2 style="color: var(--text-main); font-size: 1.75rem; margin-bottom: 0.25rem;">Fel</h2>
                 <p style="color: var(--text-light); font-weight: 500; margin-bottom: 1rem;">Computer Science Student & Web Developer</p>
                 
                 <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
@@ -176,20 +175,17 @@ const titleEl = document.getElementById('content-title');
 const subtitleEl = document.getElementById('content-subtitle');
 const bodyEl = document.getElementById('content-body');
 
-// Set halaman default yang tampil pertama kali saat direfresh
 function setPage(key) {
     if(contentData[key]){
         titleEl.textContent = contentData[key].title;
         subtitleEl.textContent = contentData[key].subtitle;
         bodyEl.innerHTML = contentData[key].body;
         
-        // Hapus styling title/subtitle jika kosong (seperti pada about page yang sudah ada header sendiri)
-        titleEl.style.display = contentData[key].title ? 'block' : 'none';
+         titleEl.style.display = contentData[key].title ? 'block' : 'none';
         subtitleEl.style.display = contentData[key].subtitle ? 'block' : 'none';
     }
 }
 
-// Inisialisasi halaman awal ke "about"
 setPage('about');
 
 navItems.forEach(item=>{
