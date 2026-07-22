@@ -130,7 +130,6 @@ main{
 	font-size: 1.15rem;
 }
 
-/* Mengatur paragraf di dalam content body agar rapi */
 #content-body p {
 	line-height: 1.6;
 	color: var(--text-light);
